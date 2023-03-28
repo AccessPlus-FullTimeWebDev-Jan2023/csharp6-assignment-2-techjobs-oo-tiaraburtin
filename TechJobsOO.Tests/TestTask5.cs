@@ -1,4 +1,6 @@
 ﻿
+using TechJobs.Tests;
+
 namespace TechJobsOO.Tests
 {
 	[TestClass]
@@ -8,7 +10,7 @@ namespace TechJobsOO.Tests
         //Uses jobs from the Job class.
         //Tests are numbered.
 
-        /*TODO: Task 5: Remove this line to uncomment the tests
+        
 
         //Unit Test 1:  TestToStringStartsAndEndsWithNewLine  -----------------------
 
@@ -38,6 +40,7 @@ namespace TechJobsOO.Tests
         }
 
 
+
         [TestMethod]  //2
         public void Test_TestToString_Starts_And_Ends_With_NewLine()
         {
@@ -57,7 +60,7 @@ namespace TechJobsOO.Tests
         }
 
         //Unit Test 2: TestToStringContainsCorrectLabelsAndData -----------------------
-
+        /*TODO: Task 5: Remove this line to uncomment the tests
 
         [TestMethod]  //3
         public void TestToStringContainsCorrectLabelsAndData_Exists()

@@ -1,11 +1,11 @@
 ﻿using System;
+using System.Reflection.Metadata.Ecma335;
 
 namespace TechJobsOOAutoGraded6
 {
 	public class Job
 	{
         ///*
-
             public int Id { get; }
             private static int nextId = 1;
             public string Name { get; set; }
@@ -22,11 +22,11 @@ namespace TechJobsOOAutoGraded6
         }
         public Job(string name, Employer employername, Location employerlocation, PositionType jobtype, CoreCompetency jobcorecompetency ) : this()
         {
-            name = Name;
-            employername = EmployerName;
-            employerlocation = EmployerLocation;
-            jobtype = JobType;
-            jobcorecompetency = JobCoreCompetency;
+            Name = name;
+            EmployerName = employername;
+            EmployerLocation = employerlocation;
+            JobType = jobtype;
+            JobCoreCompetency = jobcorecompetency;
         }
 
             // TODO: Task 3: Generate Equals() and GetHashCode() methods.  
@@ -51,7 +51,20 @@ public override bool Equals(object? obj)
         {
             return HashCode.Combine(Id, Name, EmployerName, EmployerLocation, JobType, JobCoreCompetency);
         }
-     
+
+        public string ToString()
+        { return
+
+            Environment.NewLine + " ID:" + Id + Environment.NewLine + Environment.NewLine +
+            "Name: " + Name + Environment.NewLine +
+            "Employer: " + EmployerName + Environment.NewLine +
+            "Location: " + EmployerLocation + Environment.NewLine +
+            "Position Type: " + JobType + Environment.NewLine +
+            "Core Competency: " + JobCoreCompetency + Environment.NewLine + Environment.NewLine;
+        }
+        
+
+
     }
 }
 

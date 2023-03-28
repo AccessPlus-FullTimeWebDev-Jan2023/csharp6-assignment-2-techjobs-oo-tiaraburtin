@@ -3,7 +3,7 @@ namespace TechJobsOOAutoGraded6
 {
 	public class Employer
 	{
-        public int Id { get; }
+        public int Id { get; set; }
         private static int nextId = 1;
         public string Value { get; set; }
 

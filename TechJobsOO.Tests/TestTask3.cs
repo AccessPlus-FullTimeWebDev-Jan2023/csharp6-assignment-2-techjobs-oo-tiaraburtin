@@ -132,7 +132,7 @@ namespace TechJobsOO.Tests
             Assert.AreNotEqual(testJob1.GetHashCode(), testJob2.GetHashCode(), "GetHashCode output test");
         }
 
-        TODO: Task 3: Remove this line to uncomment the tests */
+        //TODO: Task 3: Remove this line to uncomment the tests */
     }
 }
 
