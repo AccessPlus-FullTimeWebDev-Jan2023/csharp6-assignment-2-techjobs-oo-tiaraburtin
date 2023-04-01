@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.Design;
 using System.Reflection.Metadata.Ecma335;
 
 namespace TechJobsOOAutoGraded6
@@ -34,37 +35,46 @@ namespace TechJobsOOAutoGraded6
             // TODO: Task 5: Generate custom ToString() method.
                 //Until you create this method, you will not be able to print a job to the console.
 
-
        
 public override bool Equals(object? obj)
         {
             return obj is Job job &&
-                   Id == job.Id &&
-                   Name == job.Name &&
-                   EqualityComparer<Employer>.Default.Equals(EmployerName, job.EmployerName) &&
-                   EqualityComparer<Location>.Default.Equals(EmployerLocation, job.EmployerLocation) &&
-                   EqualityComparer<PositionType>.Default.Equals(JobType, job.JobType) &&
-                   EqualityComparer<CoreCompetency>.Default.Equals(JobCoreCompetency, job.JobCoreCompetency);
+                   Id == job.Id;
         }
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(Id, Name, EmployerName, EmployerLocation, JobType, JobCoreCompetency);
+            return HashCode.Combine(Id);
         }
 
-        public string ToString()
-        { return
+        public override string ToString()
+        {
 
-            Environment.NewLine + " ID:" + Id + Environment.NewLine + Environment.NewLine +
-            "Name: " + Name + Environment.NewLine +
-            "Employer: " + EmployerName + Environment.NewLine +
-            "Location: " + EmployerLocation + Environment.NewLine +
-            "Position Type: " + JobType + Environment.NewLine +
-            "Core Competency: " + JobCoreCompetency + Environment.NewLine + Environment.NewLine;
-        }
-        
-
+            if (Name == "")
+            {
+                Name = "Data not available";
+            }
+             else if (EmployerName.Value == "")
+            {
+                EmployerName.Value = "Data not available";
+            }
+             else if (EmployerLocation.Value == "")
+            {
+                EmployerLocation.Value = "Data not available";
+            }
+             else if (JobType.Value == "")
+            {
+                JobType.Value = "Data not available";
+            }
+            else if (JobCoreCompetency.Value == "")
+            {
+                JobCoreCompetency.Value = "Data not available";
+            }
+            return
+            $"{Environment.NewLine}ID: {Id}{Environment.NewLine}Name: {Name}{Environment.NewLine}Employer: {EmployerName.Value}{Environment.NewLine}Location: {EmployerLocation.Value}{Environment.NewLine}Position Type: {JobType.Value}{Environment.NewLine}Core Competency: {JobCoreCompetency.Value}{Environment.NewLine}";
+        } 
+}
 
     }
-}
+
 

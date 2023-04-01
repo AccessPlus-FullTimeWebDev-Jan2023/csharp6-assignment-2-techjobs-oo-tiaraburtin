@@ -10,7 +10,7 @@ namespace TechJobsOOAutoGraded6
 
         // TODO: Task 2: Change the fields to auto-implemented properties.
 
-        public CoreCompetency()
+        public  CoreCompetency()
         {
             Id = nextId;
             nextId++;

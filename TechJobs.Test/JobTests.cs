@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.VisualStudio.TestPlatform.Utilities;
 using System.Xml.Linq;
 
 namespace TechJobs.Tests
@@ -36,46 +37,48 @@ namespace TechJobs.Tests
             Assert.AreEqual("Desert", job3.EmployerLocation);
             Assert.AreEqual("Quality control", job3.JobType);
             Assert.AreEqual("Persistence", job3.JobCoreCompetency);
-
-
         }
+
         [TestMethod]
         public void TestJobsForEquality()
         {
-          
-                bool result = Equals(job3);
 
-                Assert.IsFalse(result, "Id's are not equal");
-            }
+            bool result = Equals(job3);
+
+            Assert.IsFalse(result, "Id's are not equal");
+        }
         [TestMethod]
-        
+
         public void TestToStringStartsAndEndsWithNewLine()
         {
             Assert.IsTrue(job3.ToString().StartsWith(Environment.NewLine));
             Assert.IsTrue(job3.ToString().EndsWith(Environment.NewLine));
-        
+
         }
 
         [TestMethod]
         public void TestToStringContainsCorrectLabelsAndData()
         {
-            Assert.IsTrue(job3.ToString().Contains("ID"));
-            Assert.IsTrue(job3.ToString().Contains("Name"));
-            Assert.IsTrue(job3.ToString().Contains("Employer"));
-            Assert.IsTrue(job3.ToString().Contains("Location"));
-            Assert.IsTrue(job3.ToString().Contains("Position Type"));
-            Assert.IsTrue(job3.ToString().Contains("Core Competency"));
+            Assert.IsTrue(job3.ToString().Contains("Name: Product tester"));
+            Assert.IsTrue(job3.ToString().Contains("Employer: ACME"));
+            Assert.IsTrue(job3.ToString().Contains("Location: Desert"));
+            Assert.IsTrue(job3.ToString().Contains("Position Type: Quality control"));
+            Assert.IsTrue(job3.ToString().Contains("Core Competency: Persistence"));
            
-
         }
 
         [TestMethod]
         public void TestToStringHandlesEmptyField()
         {
+            Assert.IsTrue(job2.ToString().Contains("Name: Data not available"));
+            Assert.IsTrue(job2.ToString().Contains("Employer: Data not available"));
+            Assert.IsTrue(job2.ToString().Contains("Location: Data not available"));
+            Assert.IsTrue(job2.ToString().Contains("Position Type: Data not available"));
+            Assert.IsTrue(job2.ToString().Contains("Core Competency: Data not available"));
 
         }
-        }
     }
+}
 
 
 
