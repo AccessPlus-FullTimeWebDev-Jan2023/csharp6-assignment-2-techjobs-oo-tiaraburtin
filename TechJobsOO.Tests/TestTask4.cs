@@ -1,4 +1,8 @@
 ﻿
+using static System.Net.Mime.MediaTypeNames;
+using System.Xml.Linq;
+using TechJobs.Tests;
+
 namespace TechJobsOO.Tests
 {
     [TestClass]
@@ -6,7 +10,7 @@ namespace TechJobsOO.Tests
 	{
         //Task 4 Tests to verify students' unit tests.  Tests are numbered.
 
-        /* TODO: Task 4: Remove this line to uncomment the tests
+     
 
         [TestMethod] //1
         public void Test_TestSettingJobIdExists()
@@ -31,6 +35,10 @@ namespace TechJobsOO.Tests
         }
 
 
+     
+
+ 
+
         [TestMethod] //2
         public void Test_TestJobConstructorSetsAllFields()
         {
@@ -52,30 +60,29 @@ namespace TechJobsOO.Tests
             Assert.AreEqual("true", existsCheck, "'TestJobConstructorSetsAllFields' not found");
         }
 
+       [TestMethod] //3
+       public void Test_TestJobsForEquality()
+       {
+           Type testType = typeof(JobTests);
+           MemberInfo[] memberInfos = testType.GetMembers();
+           string nameCheck = "TestJobsForEquality";
+           string existsCheck = "";
 
-        [TestMethod] //3
-        public void Test_TestJobsForEquality()
-        {
-            Type testType = typeof(JobTests);
-            MemberInfo[] memberInfos = testType.GetMembers();
-            string nameCheck = "TestJobsForEquality";
-            string existsCheck = "";
+           foreach (var mCheck in memberInfos)
+           {
+               if (mCheck.Name == nameCheck)
+               {
+                   existsCheck += "true";
+                   break;
+               }
+           }
 
-            foreach (var mCheck in memberInfos)
-            {
-                if (mCheck.Name == nameCheck)
-                {
-                    existsCheck += "true";
-                    break;
-                }
-            }
-
-            //verify test was created
-            Assert.AreEqual("true", existsCheck, "'TestJobsForEquality' not found");
-        }
-
-    TODO: Task 4: Remove this line to uncomment the tests */
+           //verify test was created
+           Assert.AreEqual("true", existsCheck, "'TestJobsForEquality' not found");
+       }
+      /* TODO: Task 4: Remove this line to uncomment the tests */
 
     }
+
 }
 
