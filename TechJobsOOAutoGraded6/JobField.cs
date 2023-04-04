@@ -8,7 +8,7 @@ namespace TechJobsOOAutoGraded6
 {
     public abstract class JobField
     {
-        public int Id { get; set; }
+        public int Id { get; }
         private static int nextId = 1;
         public string? Value { get; set; }
 
@@ -24,14 +24,14 @@ namespace TechJobsOOAutoGraded6
             Value = value;
         }
 
-        public override string ToString()
+        public override string? ToString()
         {
             return Value;
         }
         public override bool Equals(object? obj)
         {
-            return obj is PositionType type &&
-                   Id == type.Id;
+            return obj is JobField field &&
+                   Id == field.Id;
         }
 
         public override int GetHashCode()
